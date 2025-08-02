@@ -402,3 +402,150 @@ html {
         box-shadow: none !important;
     }
 }
+
+/* Careers Page Specific Styles */
+.careers-hero {
+    background: var(--gradient-primary);
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px; /* Account for fixed navbar */
+}
+
+.careers-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="none"><defs><radialGradient id="c" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:rgba(255,255,255,0.1)"/><stop offset="100%" style="stop-color:rgba(255,255,255,0)"/></radialGradient></defs><circle cx="300" cy="300" r="200" fill="url(%23c)"/><circle cx="700" cy="700" r="150" fill="url(%23c)"/></svg>') no-repeat center;
+    background-size: cover;
+    opacity: 0.1;
+}
+
+.positions-section {
+    padding: 100px 0;
+    background-color: white;
+}
+
+.job-card {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.job-card:hover:not(.opacity-75) {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border-color: var(--primary-color);
+}
+
+.job-meta .badge {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+}
+
+.culture-section {
+    padding: 100px 0;
+    background-color: var(--light-gray);
+}
+
+.culture-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.culture-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.culture-icon {
+    transition: all 0.3s ease;
+}
+
+.culture-card:hover .culture-icon {
+    transform: scale(1.1);
+}
+
+/* Job Modal Styles */
+.modal-content {
+    border: none;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding: 2rem 2rem 1rem 2rem;
+}
+
+.modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.job-details .detail-item {
+    font-size: 0.95rem;
+}
+
+.tech-badges .badge {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    font-weight: 500;
+}
+
+.requirements ul li,
+.responsibilities ul li,
+.benefits ul li {
+    padding: 6px 0;
+    font-size: 0.95rem;
+}
+
+/* Responsive Design for Careers */
+@media (max-width: 768px) {
+    .careers-hero {
+        text-align: center;
+        padding-top: 100px;
+    }
+    
+    .positions-section,
+    .culture-section {
+        padding: 60px 0;
+    }
+    
+    .job-card .row {
+        text-align: center;
+    }
+    
+    .job-card .col-md-4 {
+        margin-top: 1rem;
+    }
+    
+    .modal-dialog {
+        margin: 10px;
+    }
+    
+    .modal-body {
+        max-height: 60vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .careers-hero .display-4 {
+        font-size: 2rem;
+    }
+    
+    .tech-badges .badge {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+    
+    .modal-header {
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
+    }
+    
+    .modal-body {
+        padding: 1.5rem;
+    }
+}
